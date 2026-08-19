@@ -3,7 +3,6 @@
 Универсальная библиотека для работы с JSON-базами данных с автоматическим логированием и поддержкой CRUD операций.
 
 [![Python](https://img.shields.io/badge/Python-3.8%2B-blue)](https://www.python.org/downloads/)
-[![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 [![Code style](https://img.shields.io/badge/code%20style-black-black)](https://github.com/psf/black)
 
 ## 📋 Описание
