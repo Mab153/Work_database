@@ -33,17 +33,3 @@ user = User(
 # Добавление пользователя
 db.add_user(user)
 # Вывод: Пользователь Иван Петров добавлен
-
-Пример работы с логами
-# Все операции автоматически логируются
-db.add_user(user1)  # Запись в logs.json
-db.add_user(user2)  # Запись в logs.json
-
-# Структура лога:
-{
-    "operation_type": "add_user",
-    "date": "2026-08-19 15:30:45.123456",
-    "data": {
-        "args": [{"name": "Иван", "email": "ivan@mail.com", ...}]
-    }
-}
