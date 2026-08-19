@@ -1,0 +1,28 @@
+[
+    {
+        "operation_type": "add_user",
+        "date": "2026-08-19 23:31:04.959455",
+        "data": {
+            "args": [
+                {
+                    "name": "Bob",
+                    "email": "example@gmail.com",
+                    "phone_number": "123456789"
+                }
+            ]
+        }
+    },
+    {
+        "operation_type": "add_user",
+        "date": "2026-08-19 23:38:37.522352",
+        "data": {
+            "args": [
+                {
+                    "name": "Bob",
+                    "email": "example@gmail.com",
+                    "phone_number": "123456789"
+                }
+            ]
+        }
+    }
+]
