@@ -2,16 +2,11 @@
     {
         "id": 0,
         "work_name": "Выдача",
-        "sallary": 3500
+        "salary": 3500
     },
     {
         "id": 1,
         "work_name": "Выдача",
-        "sallary": 3500
-    },
-    {
-        "id": 2,
-        "work_name": "Выдача",
-        "sallary": 3500
+        "salary": 3500
     }
 ]

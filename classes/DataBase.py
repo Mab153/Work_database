@@ -3,6 +3,7 @@ import os
 from typing import Callable
 import datetime
 import functools
+from models import User, Work, Shift
 
 class DataBase:
     def __init__(self, name:str):
@@ -45,7 +46,6 @@ class DataBase:
         id = self.__get_id(self.__users)
 
         self.__users.add_records({**{"id": id}, **data.to_dict()})
-        print(f"Пользователь {data.name} добавлен")
 
     @logging
     def add_work(self, data:Work) -> None:
@@ -54,29 +54,16 @@ class DataBase:
 
         self.__works.add_records({**{"id": id}, **data.to_dict()})
 
-class User:
-    """Создание пользователя"""
-    def __init__(self, name:str, email:str, phone_number:str):
-        self.name = name
-        self.email = email
-        self.phone_number = phone_number
-
-    def to_dict(self) -> dict:
-        """Получение данных пользователя в виде dictionary объекта"""
-        return {"name": self.name,
-                "email": self.email,
-                "phone_number": self.phone_number}
-
-class Work:
-    """Создание типа работы"""
-    def __init__(self, work_name:str, sallary:float):
-        self.work_name = work_name
-        self.sallary = sallary
-
-    def to_dict(self) -> dict:
-        """Получение данных о типе работы в виде dictionary объекта"""
-        return {"work_name": self.work_name,
-                "sallary": self.sallary}
+    @logging
+    def add_shift(self, data:Shift):
+        if (user_len := len(self.__users.find_records_by_key("id", data.user_id))) > 0 and (work_len := len(self.__works.find_records_by_key("id", data.work_id))) > 0:
+            self.__schedules.add_records({"user_id": data.user_id,
+                                          "work_id": data.work_id,
+                                          "datetime": data.date.strftime("%d.%m.%Y")})
+        elif user_len <= 0:
+            raise Exception(f'Не существует пользователя с id {data.user_id}')
+        elif work_len <= 0:
+            raise Exception(f'Не существует работы с id {data.user_id}')
 
 
 if __name__ == "__main__":
@@ -84,10 +71,10 @@ if __name__ == "__main__":
 
     bob = User(name='Bob', email="example@gmail.com", phone_number="123456789")
 
-    print(bob.to_dict())
-
     db.add_user(bob)
 
     giver = Work("Выдача", 3500)
 
     db.add_work(giver)
+
+    db.add_shift(Shift(0,0,datetime.date(2026,10,5)))

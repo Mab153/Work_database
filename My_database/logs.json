@@ -1,59 +1,7 @@
 [
     {
         "operation_type": "add_user",
-        "date": "2026-08-20 00:07:22.871997",
-        "data": {
-            "args": [
-                {
-                    "name": "Bob",
-                    "email": "example@gmail.com",
-                    "phone_number": "123456789"
-                }
-            ]
-        }
-    },
-    {
-        "operation_type": "add_user",
-        "date": "2026-08-20 00:07:29.293641",
-        "data": {
-            "args": [
-                {
-                    "name": "Bob",
-                    "email": "example@gmail.com",
-                    "phone_number": "123456789"
-                }
-            ]
-        }
-    },
-    {
-        "operation_type": "add_user",
-        "date": "2026-08-20 00:13:21.564253",
-        "data": {
-            "args": [
-                {
-                    "name": "Bob",
-                    "email": "example@gmail.com",
-                    "phone_number": "123456789"
-                }
-            ]
-        }
-    },
-    {
-        "operation_type": "add_user",
-        "date": "2026-08-20 00:14:47.087435",
-        "data": {
-            "args": [
-                {
-                    "name": "Bob",
-                    "email": "example@gmail.com",
-                    "phone_number": "123456789"
-                }
-            ]
-        }
-    },
-    {
-        "operation_type": "add_user",
-        "date": "2026-08-20 00:15:41.078183",
+        "date": "2026-08-20 00:51:09.971034",
         "data": {
             "args": [
                 {
@@ -66,19 +14,71 @@
     },
     {
         "operation_type": "add_work",
-        "date": "2026-08-20 00:15:41.078987",
+        "date": "2026-08-20 00:51:09.971902",
         "data": {
             "args": [
                 {
                     "work_name": "Выдача",
-                    "sallary": 3500
+                    "salary": 3500
+                }
+            ]
+        }
+    },
+    {
+        "operation_type": "add_shift",
+        "date": "2026-08-20 00:51:10.019691",
+        "data": {
+            "args": [
+                {
+                    "user_id": 0,
+                    "work_id": 0,
+                    "date": "05.10.2026"
+                }
+            ]
+        }
+    },
+    {
+        "operation_type": "add_shift",
+        "date": "2026-08-20 00:53:59.322573",
+        "data": {
+            "args": [
+                {
+                    "user_id": 0,
+                    "work_id": 0,
+                    "date": "05.10.2026"
+                }
+            ]
+        }
+    },
+    {
+        "operation_type": "add_shift",
+        "date": "2026-08-20 00:54:09.717853",
+        "data": {
+            "args": [
+                {
+                    "user_id": 0,
+                    "work_id": 0,
+                    "date": "05.10.2026"
                 }
             ]
         }
     },
     {
         "operation_type": "add_user",
-        "date": "2026-08-20 00:16:17.189146",
+        "date": "2026-08-20 01:03:54.366957",
+        "data": {
+            "args": [
+                {
+                    "name": "Bob",
+                    "email": "example@gmail.com",
+                    "phone_number": "123456789"
+                }
+            ]
+        }
+    },
+    {
+        "operation_type": "add_user",
+        "date": "2026-08-20 01:04:11.578790",
         "data": {
             "args": [
                 {
@@ -91,19 +91,32 @@
     },
     {
         "operation_type": "add_work",
-        "date": "2026-08-20 00:16:17.190394",
+        "date": "2026-08-20 01:04:11.579610",
         "data": {
             "args": [
                 {
                     "work_name": "Выдача",
-                    "sallary": 3500
+                    "salary": 3500
+                }
+            ]
+        }
+    },
+    {
+        "operation_type": "add_shift",
+        "date": "2026-08-20 01:04:11.613485",
+        "data": {
+            "args": [
+                {
+                    "user_id": 0,
+                    "work_id": 0,
+                    "date": "05.10.2026"
                 }
             ]
         }
     },
     {
         "operation_type": "add_user",
-        "date": "2026-08-20 00:16:54.509842",
+        "date": "2026-08-20 01:08:16.822357",
         "data": {
             "args": [
                 {
@@ -116,12 +129,25 @@
     },
     {
         "operation_type": "add_work",
-        "date": "2026-08-20 00:16:54.511121",
+        "date": "2026-08-20 01:08:16.823365",
         "data": {
             "args": [
                 {
                     "work_name": "Выдача",
-                    "sallary": 3500
+                    "salary": 3500
+                }
+            ]
+        }
+    },
+    {
+        "operation_type": "add_shift",
+        "date": "2026-08-20 01:08:16.839890",
+        "data": {
+            "args": [
+                {
+                    "user_id": 0,
+                    "work_id": 0,
+                    "date": "05.10.2026"
                 }
             ]
         }
