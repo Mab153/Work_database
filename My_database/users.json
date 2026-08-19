@@ -40,23 +40,5 @@
         "name": "Bob",
         "email": "example@gmail.com",
         "phone_number": "123456789"
-    },
-    {
-        "id": 7,
-        "name": "Bob",
-        "email": "example@gmail.com",
-        "phone_number": "123456789"
-    },
-    {
-        "id": 8,
-        "name": "Bob",
-        "email": "example@gmail.com",
-        "phone_number": "123456789"
-    },
-    {
-        "id": 9,
-        "name": "Bob",
-        "email": "example@gmail.com",
-        "phone_number": "123456789"
     }
 ]

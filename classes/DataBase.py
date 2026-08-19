@@ -28,19 +28,31 @@ class DataBase:
             return result
         return wrapper
 
-    @logging
-    def add_user(self, data:User) -> None:
-        """Добавление пользователя в базу данных в файл users.json"""
+    def __get_id(self, database:JSONDatabase) -> int:
         try:
-            id = self.__users.get_all_records()[-1]["id"] + 1
+            id = database.get_all_records()[-1]["id"] + 1
         except (IndexError, KeyError, AttributeError):
             id = 0
-
+        
         except Exception as e:
             raise Exception(f"Произошла непредвиденная ошибка: {e}")
 
+        return id
+
+    @logging
+    def add_user(self, data:User) -> None:
+        """Добавление пользователя в базу данных в файл users.json"""
+        id = self.__get_id(self.__users)
+
         self.__users.add_records({**{"id": id}, **data.to_dict()})
         print(f"Пользователь {data.name} добавлен")
+
+    @logging
+    def add_work(self, data:Work) -> None:
+        """Добавление типа работы в базу данных в файл works.json"""
+        id = self.__get_id(self.__works)
+
+        self.__works.add_records({**{"id": id}, **data.to_dict()})
 
 class User:
     """Создание пользователя"""
@@ -55,6 +67,17 @@ class User:
                 "email": self.email,
                 "phone_number": self.phone_number}
 
+class Work:
+    """Создание типа работы"""
+    def __init__(self, work_name:str, sallary:float):
+        self.work_name = work_name
+        self.sallary = sallary
+
+    def to_dict(self) -> dict:
+        """Получение данных о типе работы в виде dictionary объекта"""
+        return {"work_name": self.work_name,
+                "sallary": self.sallary}
+
 
 if __name__ == "__main__":
     db = DataBase("My_database")
@@ -64,3 +87,7 @@ if __name__ == "__main__":
     print(bob.to_dict())
 
     db.add_user(bob)
+
+    giver = Work("Выдача", 3500)
+
+    db.add_work(giver)

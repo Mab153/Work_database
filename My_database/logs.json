@@ -1,7 +1,7 @@
 [
     {
         "operation_type": "add_user",
-        "date": "2026-08-19 23:31:04.959455",
+        "date": "2026-08-20 00:07:22.871997",
         "data": {
             "args": [
                 {
@@ -14,13 +14,114 @@
     },
     {
         "operation_type": "add_user",
-        "date": "2026-08-19 23:38:37.522352",
+        "date": "2026-08-20 00:07:29.293641",
         "data": {
             "args": [
                 {
                     "name": "Bob",
                     "email": "example@gmail.com",
                     "phone_number": "123456789"
+                }
+            ]
+        }
+    },
+    {
+        "operation_type": "add_user",
+        "date": "2026-08-20 00:13:21.564253",
+        "data": {
+            "args": [
+                {
+                    "name": "Bob",
+                    "email": "example@gmail.com",
+                    "phone_number": "123456789"
+                }
+            ]
+        }
+    },
+    {
+        "operation_type": "add_user",
+        "date": "2026-08-20 00:14:47.087435",
+        "data": {
+            "args": [
+                {
+                    "name": "Bob",
+                    "email": "example@gmail.com",
+                    "phone_number": "123456789"
+                }
+            ]
+        }
+    },
+    {
+        "operation_type": "add_user",
+        "date": "2026-08-20 00:15:41.078183",
+        "data": {
+            "args": [
+                {
+                    "name": "Bob",
+                    "email": "example@gmail.com",
+                    "phone_number": "123456789"
+                }
+            ]
+        }
+    },
+    {
+        "operation_type": "add_work",
+        "date": "2026-08-20 00:15:41.078987",
+        "data": {
+            "args": [
+                {
+                    "work_name": "Выдача",
+                    "sallary": 3500
+                }
+            ]
+        }
+    },
+    {
+        "operation_type": "add_user",
+        "date": "2026-08-20 00:16:17.189146",
+        "data": {
+            "args": [
+                {
+                    "name": "Bob",
+                    "email": "example@gmail.com",
+                    "phone_number": "123456789"
+                }
+            ]
+        }
+    },
+    {
+        "operation_type": "add_work",
+        "date": "2026-08-20 00:16:17.190394",
+        "data": {
+            "args": [
+                {
+                    "work_name": "Выдача",
+                    "sallary": 3500
+                }
+            ]
+        }
+    },
+    {
+        "operation_type": "add_user",
+        "date": "2026-08-20 00:16:54.509842",
+        "data": {
+            "args": [
+                {
+                    "name": "Bob",
+                    "email": "example@gmail.com",
+                    "phone_number": "123456789"
+                }
+            ]
+        }
+    },
+    {
+        "operation_type": "add_work",
+        "date": "2026-08-20 00:16:54.511121",
+        "data": {
+            "args": [
+                {
+                    "work_name": "Выдача",
+                    "sallary": 3500
                 }
             ]
         }
