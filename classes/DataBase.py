@@ -57,6 +57,9 @@ class DataBase:
             raise Exception(f"Произошла непредвиденная ошибка: {e}")
 
         return id
+
+    def get_logs(self) -> dict:
+        return self.__logs.get_all_records()
     
 # Работа с пользователями
     def get_all_users(self) -> list[dict]:
