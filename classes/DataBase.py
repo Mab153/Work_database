@@ -6,17 +6,23 @@ import functools
 from models import User, Work, Shift
 
 class DataBase:
-    def __init__(self, name:str):
+    def __init__(self, name:str, verbose: bool = False, logs_streaming: bool = False):
         """Создание экземпляра класса DataBase"""
+        self.logs_streaming = logs_streaming
+        self.verbose = verbose
         self.__name = name
 
         if not os.path.isdir(f"./{self.__name}"):
             os.makedirs(f"./{self.__name}", exist_ok=True)
+            if verbose == True:
+                print('Создана дирректория с базой давнных') 
 
         self.__users = JSONDatabase(os.path.join(".", self.__name, "users.json"))
         self.__works = JSONDatabase(os.path.join(".", self.__name, "works.json"))
         self.__schedules = JSONDatabase(os.path.join(".", self.__name, "schedules.json"))
         self.__logs = JSONDatabase(os.path.join(".", self.__name, "logs.json"))
+        if self.verbose == True:
+            print('Инициализированны все таблицы')
 
     def logging(func: Callable):
         """Сбор логов в файл logs.json"""
@@ -29,9 +35,15 @@ class DataBase:
                 for a in args
             ]
 
-            self.__logs.add_records({"operation_type": func.__name__,
+            log_data = {"operation_type": func.__name__,
                                      "date": str(datetime.datetime.now()),
-                                     "data":{"args": serialized_args}})
+                                     "data":{"args": serialized_args}}
+
+            self.__logs.add_records(log_data)
+
+            if self.logs_streaming == True:
+                print(log_data)
+
             return result
         return wrapper
 
@@ -57,10 +69,15 @@ class DataBase:
 
         self.__users.add_records({**{"id": id}, **data.to_dict()})
 
+        if self.verbose == True:
+            print(f'Добавлен пользователь {data.to_dict()}')
+
     @logging
     def update_user(self, user_id:int, new_data:User) -> None:
         if len(self.__users.find_records_by_key("id", user_id)) > 0:
             self.__users.update_record_by_key({"id": user_id}, new_data.to_dict())
+            if self.verbose == True:
+                print(f'Обновлен пользователь с id {user_id}')
         else:
             raise Exception("Пользователь с таким id не найден")
 
@@ -75,6 +92,9 @@ class DataBase:
 
         self.__works.add_records({**{"id": id}, **data.to_dict()})
 
+        if self.verbose == True:
+            print(f'Добавлена работа {data.to_dict()}')
+
 # Работа со сменами
     def get_all_shifts(self) -> list[dict]:
         return self.__schedules.get_all_records()
@@ -85,6 +105,8 @@ class DataBase:
             self.__schedules.add_records({"user_id": data.user_id,
                                           "work_id": data.work_id,
                                           "datetime": data.date.strftime("%d.%m.%Y")})
+            if self.verbose == True:
+                print(f'Добавлена смена {data.to_dict()}')
         elif user_len <= 0 and work_len <= 0:
             raise Exception(f'Не существуют такие пользователь и работа: {data.user_id}, {data.work_id}')
         elif user_len <= 0:

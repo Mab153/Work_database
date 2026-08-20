@@ -12,5 +12,61 @@
                 }
             ]
         }
+    },
+    {
+        "operation_type": "update_user",
+        "date": "2026-08-20 22:56:47.754119",
+        "data": {
+            "args": [
+                0,
+                {
+                    "name": "Bob1",
+                    "email": "example@gmail.com",
+                    "phone_number": "123456789"
+                }
+            ]
+        }
+    },
+    {
+        "operation_type": "update_user",
+        "date": "2026-08-20 22:56:58.964735",
+        "data": {
+            "args": [
+                0,
+                {
+                    "name": "Bob1",
+                    "email": "example@gmail.com",
+                    "phone_number": "123456789"
+                }
+            ]
+        }
+    },
+    {
+        "operation_type": "update_user",
+        "date": "2026-08-20 23:03:55.286311",
+        "data": {
+            "args": [
+                0,
+                {
+                    "name": "Bob1",
+                    "email": "example@gmail.com",
+                    "phone_number": "123456789"
+                }
+            ]
+        }
+    },
+    {
+        "operation_type": "update_user",
+        "date": "2026-08-20 23:04:05.892258",
+        "data": {
+            "args": [
+                0,
+                {
+                    "name": "Bob1",
+                    "email": "example@gmail.com",
+                    "phone_number": "123456789"
+                }
+            ]
+        }
     }
 ]
