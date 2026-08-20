@@ -90,7 +90,7 @@ class DataBase:
         elif user_len <= 0:
             raise Exception(f'Не существует пользователя с id {data.user_id}')
         elif work_len <= 0:
-            raise Exception(f'Не существует работы с id {data.user_id}')
+            raise Exception(f'Не существует работы с id {data.work_id}')
 
 
 if __name__ == "__main__":
